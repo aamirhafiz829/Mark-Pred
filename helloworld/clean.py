@@ -42,16 +42,16 @@ def MakeBaseImage(tickerSymbol):
     ticker_df = yf.download(tickerSymbol, start=start_date.strftime('%Y-%m-%d'), end=end_date.strftime('%Y-%m-%d'))
     ticker_df.index = pd.to_datetime(ticker_df.index)
     # Calculate moving averages
-    ticker_df['60-day MA'] = ticker_df['Close'].rolling(window=60).mean()
-    ticker_df['100-day MA'] = ticker_df['Close'].rolling(window=100).mean()
-    ticker_df['120-day MA'] = ticker_df['Close'].rolling(window=120).mean()
+    ticker_df['65-day MA'] = ticker_df['Close'].rolling(window=65).mean()
+    ticker_df['130-day MA'] = ticker_df['Close'].rolling(window=130).mean()
+    ticker_df['260-day MA'] = ticker_df['Close'].rolling(window=260).mean()
 
     # Plotting   
     fig, ax = plt.subplots()
     ticker_df.plot.line(y='Close', use_index=True, ax=ax)
-    ticker_df['60-day MA'].plot.line(use_index=True, ax=ax, label='60-day MA')
-    ticker_df['100-day MA'].plot.line(use_index=True, ax=ax, label='100-day MA')
-    ticker_df['120-day MA'].plot.line(use_index=True, ax=ax, label='120-day MA')
+    ticker_df['65-day MA'].plot.line(use_index=True, ax=ax, label='65-day (3 mo.) Moving Avg')
+    ticker_df['130-day MA'].plot.line(use_index=True, ax=ax, label='130-day (6 mo.) Moving Avg')
+    ticker_df['260-day MA'].plot.line(use_index=True, ax=ax, label='260-day (1 yr) Moving Avg')
 
     # Add legend
     plt.legend()
