@@ -13,7 +13,7 @@
 
     <!-- Button to call /base/<ticker>/ -->
     <button onclick="goToBase()">Go to Base</button>
-
+    <button onclick="analyzeTicker()">Analyze</button>
     <script>
         // Function to extract the ticker from the URL
         function getTickerFromUrl() {
@@ -28,6 +28,9 @@
         // Function to redirect to /base/<ticker>/
         function goToBase() {
             window.location.href = '/base/' + ticker + '/';
+        }
+	function analyzeTicker() {
+            window.location.href = '/analyze/' + ticker;
         }
     </script>
 </body>
