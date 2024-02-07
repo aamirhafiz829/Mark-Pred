@@ -38,19 +38,23 @@ def obtain_stock(tickerSymbol):
 
 def MakeBaseImage(tickerSymbol):
     end_date = datetime.now()
-
-    # Date 10 years ago from the current date
     start_date = end_date - timedelta(days=10*365)
     ticker_df = yf.download(tickerSymbol, start=start_date.strftime('%Y-%m-%d'), end=end_date.strftime('%Y-%m-%d'))
-    
     ticker_df.index = pd.to_datetime(ticker_df.index)
-    #ticker_df["Tomorrow"] = ticker_df["Close"].shift(-1)
-    #ticker_df["Target"] = (ticker_df["Tomorrow"] > ticker_df["Close"]).astype(int)
-    #print(ticker_df.head())
-    
+    # Calculate moving averages
+    ticker_df['60-day MA'] = ticker_df['Close'].rolling(window=60).mean()
+    ticker_df['100-day MA'] = ticker_df['Close'].rolling(window=100).mean()
+    ticker_df['120-day MA'] = ticker_df['Close'].rolling(window=120).mean()
+
+    # Plotting   
     fig, ax = plt.subplots()
     ticker_df.plot.line(y='Close', use_index=True, ax=ax)
+    ticker_df['60-day MA'].plot.line(use_index=True, ax=ax, label='60-day MA')
+    ticker_df['100-day MA'].plot.line(use_index=True, ax=ax, label='100-day MA')
+    ticker_df['120-day MA'].plot.line(use_index=True, ax=ax, label='120-day MA')
+
+    # Add legend
+    plt.legend()
     plt.savefig('plots/' + tickerSymbol + '_base.png')
     plt.close(fig)
-    #print("Cleaned data.. ready to run")
     return
