@@ -1,0 +1,394 @@
+Exception on /stock/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 22, in obtain_stock_handler
+    if exists(ticker):
+  File "/home/ubuntu/helloworld/app.py", line 32, in exists
+    end_date = datetime.now()
+NameError: name 'datetime' is not defined
+Exception on /stock/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 22, in obtain_stock_handler
+    if exists(ticker):
+  File "/home/ubuntu/helloworld/app.py", line 32, in exists
+    end_date = datetime.now()
+AttributeError: module 'datetime' has no attribute 'now'
+Exception on /stock/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 22, in obtain_stock_handler
+    if exists(ticker):
+  File "/home/ubuntu/helloworld/app.py", line 34, in exists
+    start_date = end_date - timedelta(days=5*365)
+NameError: name 'timedelta' is not defined
+Exception on /stock/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 25, in obtain_stock_handler
+    MakeBaseImage(ticker)
+  File "/home/ubuntu/helloworld/clean.py", line 40, in MakeBaseImage
+    end_date = datetime.now()
+AttributeError: module 'datetime' has no attribute 'now'
+Exception on /base/GSPC/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 31, in view_base
+    return send_file('plots/' + ticker + '_base.png', mimetype='image/png')
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/helpers.py", line 499, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/werkzeug/utils.py", line 427, in send_file
+    stat = os.stat(path)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/helloworld/plots/GSPC_base.png'
+Exception on /stock/GSPC/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 27, in obtain_stock_handler
+    return ("No ticker exists: ", tickerSymbol)
+NameError: name 'tickerSymbol' is not defined
+Exception on /analyze/AAPL [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 44, in analyze_handler
+    analyzeRF(df)
+  File "/home/ubuntu/helloworld/ml.py", line 12, in analyzeRF
+    train = sp500.iloc[:-100]
+NameError: name 'sp500' is not defined
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Target'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 44, in analyze_handler
+    analyzeRF(df)
+  File "/home/ubuntu/helloworld/ml.py", line 16, in analyzeRF
+    model.fit(train[predictors], train["Target"])
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Target'
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Target'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 44, in analyze_handler
+    analyzeRF(df)
+  File "/home/ubuntu/helloworld/ml.py", line 16, in analyzeRF
+    model.fit(train[predictors], train["Target"])
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Target'
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Dividends'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 45, in analyze_handler
+    analyzeRF(df)
+  File "/home/ubuntu/helloworld/ml.py", line 9, in analyzeRF
+    del df["Dividends"]
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 4500, in __delitem__
+    loc = self.axes[-1].get_loc(key)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Dividends'
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 45, in analyze_handler
+    analyzeRF(df)
+  File "/home/ubuntu/helloworld/ml.py", line 11, in analyzeRF
+    df.index = pd.to_datetime(df.index)
+NameError: name 'pd' is not defined
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 873, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 892, in finalize_request
+    response = self.make_response(rv)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1164, in make_response
+    raise TypeError(
+TypeError: The view function for 'analyze_handler' did not return a valid response. The function either returned None or ended without a return statement.
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 873, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 892, in finalize_request
+    response = self.make_response(rv)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1201, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a float64.
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 45, in analyze_handler
+    precision_score = analyzeRF(df)
+  File "/home/ubuntu/helloworld/ml.py", line 21, in analyzeRF
+    return str(recision_score(test["Target"], preds))
+NameError: name 'recision_score' is not defined
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 45, in analyze_handler
+    precision_score = analyzeRF(df)
+  File "/home/ubuntu/helloworld/ml.py", line 21, in analyzeRF
+    predictions = backtest(df, model, predictors)
+  File "/home/ubuntu/helloworld/ml.py", line 37, in backtest
+    predictions = predict(train, test, predictors, model)
+NameError: name 'predict' is not defined
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 873, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 892, in finalize_request
+    response = self.make_response(rv)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1201, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a Series.
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 47, in analyze_handler
+    return precision_results.to_json()
+AttributeError: 'tuple' object has no attribute 'to_json'
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 49, in analyze_handler
+    return jsonify(results)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/json/__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)  # type: ignore[return-value]
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/json/provider.py", line 214, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/json/provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/json/provider.py", line 121, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type Series is not JSON serializable
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 48, in analyze_handler
+    results = list(precision_results)
+TypeError: 'numpy.float64' object is not iterable
+Exception on /stock/MAAS/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 30, in obtain_stock_handler
+    return ("No ticker exists: ", tickerSymbol)
+NameError: name 'tickerSymbol' is not defined
+Exception on /base/MSFT/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 34, in view_base
+    return send_file('plots/' + ticker + '_base.png', mimetype='image/png')
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/helpers.py", line 499, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/werkzeug/utils.py", line 427, in send_file
+    stat = os.stat(path)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/helloworld/plots/MSFT_base.png'
+Exception on /analyze/VISA/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 45, in analyze_handler
+    precision_table, precision_score = analyzeRF(df)
+  File "/home/ubuntu/helloworld/ml.py", line 23, in analyzeRF
+    predictions = backtest(df, model, predictors)
+  File "/home/ubuntu/helloworld/ml.py", line 42, in backtest
+    return pd.concat(all_predictions)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 380, in concat
+    op = _Concatenator(
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 443, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 505, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+Exception on /stock/favicon.ico/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 30, in obtain_stock_handler
+    return ("No ticker exists: ", tickerSymbol)
+NameError: name 'tickerSymbol' is not defined

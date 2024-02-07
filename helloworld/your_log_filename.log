@@ -1,0 +1,22 @@
+Exception on /stock/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 873, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 892, in finalize_request
+    response = self.make_response(rv)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1164, in make_response
+    raise TypeError(
+TypeError: The view function for 'obtain_stock_handler' did not return a valid response. The function either returned None or ended without a return statement.
+Exception on /stock/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 873, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 892, in finalize_request
+    response = self.make_response(rv)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1164, in make_response
+    raise TypeError(
+TypeError: The view function for 'obtain_stock_handler' did not return a valid response. The function either returned None or ended without a return statement.

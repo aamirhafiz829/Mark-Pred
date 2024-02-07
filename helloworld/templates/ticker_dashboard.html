@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticker Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    
+    <p>Currently viewing: <span id="tickerName"></span></p>
+
+    <!-- Image tag for displaying the plot -->
+    <img id="tickerPlot" src="" alt="Ticker Plot">
+
+    <!-- Button to call /base/<ticker>/ -->
+    <button onclick="goToBase()">Go to Base</button>
+
+    <script>
+        // Function to extract the ticker from the URL
+        function getTickerFromUrl() {
+            var pathArray = window.location.pathname.split('/');
+            return pathArray[2]; // Assuming the URL is like /stock/<ticker>/
+        }
+        // Display the ticker
+        var ticker = getTickerFromUrl();
+        document.getElementById('tickerName').textContent = ticker;
+        // Set the image source based on the ticker
+        document.getElementById('tickerPlot').src = "../plots/" + ticker + "_base.png";
+        // Function to redirect to /base/<ticker>/
+        function goToBase() {
+            window.location.href = '/base/' + ticker + '/';
+        }
+    </script>
+</body>
+</html>
