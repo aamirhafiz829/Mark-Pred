@@ -392,3 +392,91 @@ Traceback (most recent call last):
   File "/home/ubuntu/helloworld/app.py", line 30, in obtain_stock_handler
     return ("No ticker exists: ", tickerSymbol)
 NameError: name 'tickerSymbol' is not defined
+Exception on /analyze/AAPL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 41, in analyze_handler
+    confusion_matrix, balance = analyzeRF(df,tickerSymbol)
+  File "/home/ubuntu/helloworld/ml.py", line 22, in analyzeRF
+    balance, buy_sell_log = simulate_trading(df, predictions,tickerSymbol)
+  File "/home/ubuntu/helloworld/simulations.py", line 35, in simulate_trading
+    with open(file_path, 'w') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/simulations/AAPL_simulation.txt'
+Exception on /analyze/NVDA/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 41, in analyze_handler
+    confusion_matrix, balance = analyzeRF(df,tickerSymbol)
+  File "/home/ubuntu/helloworld/ml.py", line 22, in analyzeRF
+    balance, buy_sell_log = simulate_trading(df, predictions,tickerSymbol)
+  File "/home/ubuntu/helloworld/simulations.py", line 35, in simulate_trading
+    with open(file_path, 'w') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '../simulations/NVDA_simulation.txt'
+Exception on /analyze/PG/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 41, in analyze_handler
+    confusion_matrix, balance = analyzeRF(df,tickerSymbol)
+  File "/home/ubuntu/helloworld/ml.py", line 23, in analyzeRF
+    return (confusion_matrix(predictions["Target"], predictions["Predictions"]), round(balance,3))
+NameError: name 'confusion_matrix' is not defined
+Exception on /analyze/V/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 42, in analyze_handler
+    cm_df = pd.DataFrame(confusion_matrix, columns=['Predicted 0', 'Predicted 1'], index=['Actual 0', 'Actual 1'])
+NameError: name 'pd' is not defined
+Exception on /analyze/LLY/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 45, in analyze_handler
+    balance, buy_sell_log = simulate_trading(df, predictions)
+NameError: name 'simulate_trading' is not defined
+Exception on /analyze/HD/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 45, in analyze_handler
+    balance, buy_sell_log = simulate_trading(df, predictions)
+NameError: name 'predictions' is not defined

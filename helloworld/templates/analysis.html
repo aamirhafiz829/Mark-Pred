@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='analysis.css') }}">
+</head>
+<body>
+    <div class="container">
+	<h2>Analysis Results for {{ ticker }}</h2>
+	<h3>Confusion Matrix (# of Days)<h3>
+	<div class="table-responsive">
+            <!-- Display the precision table -->
+            {{ cm_table|safe }}
+        </div>
+	<h3>Our model's performance over the last 10 years<h3>
+        <div>
+            <!-- Display the precision score -->
+            <p>Change in your balance: ${{ balance }}</p>
+        </div>
+    </div>
+</body>
+</html>
+

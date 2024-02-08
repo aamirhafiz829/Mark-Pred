@@ -525,3 +525,59 @@ vim app.py
 vim clean.py
 echo SHA256:Iaknrpo46BubGiEyU3pskAd5ZGG8LfDuT7/cmRguwYA aamir829hafiz@gmail.com >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
+clear
+s
+ls
+cd helloworld/
+cd templates/
+ls
+cs ticker_dashboard.html 
+cd ticker_dashboard.html 
+vim ticker_dashboard.html 
+cd ../static/
+vim ticker_dashboard_style.css 
+cd ..
+vim clean.py 
+vim ticker_dashboard_style.css
+rm ticker_dashboard_style.css 
+clear
+ls
+cd static/
+ls
+vim ticker_dashboard_style.css 
+clear
+cd helloworld/templates/
+ls
+vim ticker_dashboard.html 
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+cd ..
+git add .
+git commit -m "A lot of front end changes"
+git push -u origin master
+ls
+cd templates
+ls
+cd ..
+vim app.py
+cd templates/
+vim analysis.html
+cd ..
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+cd static/
+ls
+vim analysis.css
+cd ../templates/
+ls
+vim analysis.html 
+clear
+vim analysis.html 
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+cd ..
+ls
+vim ml.py
+cat ml.py
+clear
+cat app.py

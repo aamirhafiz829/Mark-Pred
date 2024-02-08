@@ -4,8 +4,8 @@ from datetime import datetime, timedelta
 import yfinance as yf
 from ml import analyzeRF
 from clean import obtain_stock, MakeBaseImage 
-
-
+import pandas as pd
+from simulations import simulate_trading
 
 app = Flask(__name__)
 print("1/25... startup")
@@ -35,21 +35,14 @@ def view_base(ticker):
 
 @app.route('/analyze/<tickerSymbol>/',methods = ["GET"])
 def analyze_handler(tickerSymbol):
-    
     end_date = datetime.now()
-    # Date 10 years ago from the current date
     start_date = end_date - timedelta(days=10*365)
-    
-    df = yf.download(tickerSymbol, start=start_date.strftime('%Y-%m-%d'), end=end_date.strftime('%Y-%m-%d'))
-    #pass the df to the helper 
-    precision_table, precision_score = analyzeRF(df)
-    table = precision_table.to_frame().to_html()
-    #should return something useful
-    #results = list(precision_results)
-    score = "<p> Accuracy: "+str(precision_score) + "</p>"
-    return table + score
-
-
+    df = yf.download(tickerSymbol, start=start_date.strftime('%Y-%m-%d'), end=end_date.strftime('%Y-%m-%d')) 
+    confusion_matrix, balance_str = analyzeRF(df,tickerSymbol)
+    cm_df = pd.DataFrame(confusion_matrix, columns=['Predicted Decrease', 'Predicted Increase'], index=['Actual Decrease', 'Actual Increase'])
+    # Convert the DataFrame to HTML
+    cm_html = cm_df.to_html(classes='table table-striped', index=True, border=0)
+    return render_template('analysis.html', cm_table=cm_html, balance=balance_str, ticker=tickerSymbol)
 
 def exists(tickerSymbol):
     end_date = datetime.now()
