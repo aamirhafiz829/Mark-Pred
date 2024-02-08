@@ -1,14 +1,61 @@
 <html>
 <head>
-    <title>Stock Ticker Selection</title>
-</head>
-<body>
-    <h1>Hello world, Select a Stock Ticker</h1>
+    <title>Ticker Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
 
+        h1 {
+            color: #007BFF;
+        }
+
+        select {
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>I
+    <h1>Stock Ticker</h1>
     <!-- Dropdown for selecting the ticker -->
     <select id="tickerSelect">
-        <option value="AAPL">AAPL</option>
-        <option value="TSLA">TSLA</option>
+        <option value="AAPL">Apple</option>
+        <option value="TSLA">Tesla</option>
+    	<option value="NVDA">Nvidia Corp</option>
+	<option value="LLY">Lilly</option>
+	<option value="TSM">Taiwan Semiconductor</option>
+	<option value="V">Visa</option>
+	<option value="XOM">Exxom</option>
+	<option value="MA">Mastercard</option>
+	<option value="HD">Home Depot</option>
+	<option value="ORCL">Oracle</option>
+	<option value="JNJ">Johnson &amp; Johnson </option>
+	<option value="PG">Proctor &amp; Gamble Co.</option>
     </select>
 
     <!-- Button to submit the selection -->

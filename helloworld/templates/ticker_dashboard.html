@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
+    <meta charset="UTF-8">
     <title>Ticker Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ticker_dashboard_style.css') }}">
 </head>
 <body>
     <h1>Dashboard</h1>
     
     <p>Currently viewing: <span id="tickerName"></span></p>
 
+    
     <!-- Image tag for displaying the plot -->
-    <img id="tickerPlot" src="" alt="Ticker Plot">
-
+    <div>
+    <img id="dynamicImage" src="" alt="Image 1">
+    </div>
     <!-- Button to call /base/<ticker>/ -->
     <button onclick="goToBase()">Go to Base</button>
     <button onclick="analyzeTicker()">Analyze</button>
@@ -24,7 +28,7 @@
         var ticker = getTickerFromUrl();
         document.getElementById('tickerName').textContent = ticker;
         // Set the image source based on the ticker
-        document.getElementById('tickerPlot').src = "../plots/" + ticker + "_base.png";
+        document.getElementById('dynamicImage').src = "/static/" + ticker + "_base.png";
         // Function to redirect to /base/<ticker>/
         function goToBase() {
             window.location.href = '/base/' + ticker + '/';

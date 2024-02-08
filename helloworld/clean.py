@@ -56,5 +56,6 @@ def MakeBaseImage(tickerSymbol):
     # Add legend
     plt.legend()
     plt.savefig('plots/' + tickerSymbol + '_base.png')
+    plt.savefig('static/' + tickerSymbol+'_base.png')
     plt.close(fig)
     return
