@@ -19,8 +19,13 @@ def analyzeRF(df,tickerSymbol):
     correct = (differences == 0).sum()
     fails = (differences != 0).sum()
     results_table = {"correct": correct, "fails": fails}
-    balance, buy_sell_log = simulate_trading(df, predictions,tickerSymbol)
-    return (confusion_matrix(predictions["Target"], predictions["Predictions"]), round(balance,3))
+    balance, transactions = simulate_trading(df, predictions,tickerSymbol)
+    output = "Balances per share: \n"
+    for i in range(len(balance)):
+        output += "$ "+str(round(balance[i], 3)) + " with " + str(transactions[i]) + " transactions\n"
+
+
+    return (confusion_matrix(predictions["Target"], predictions["Predictions"]), output)
 
 
 def analyzeRFLegacy(df):

@@ -9,18 +9,28 @@
 </head>
 <body>
     <div class="container">
-	<h2>Analysis Results for {{ ticker }}</h2>
-	<h3>Confusion Matrix (# of Days)<h3>
-	<div class="table-responsive">
+    <h2>Analysis Results for {{ ticker }}</h2>
+    <h3>Confusion Matrix (# of Days)</h3>
+
+    <div class="table-responsive">
             <!-- Display the precision table -->
             {{ cm_table|safe }}
-        </div>
-	<h3>Our model's performance over the last 10 years<h3>
-        <div>
-            <!-- Display the precision score -->
-            <p>Change in your balance: ${{ balance }}</p>
-        </div>
     </div>
+    <h3>Our model's performance over the last 10 years</h3>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div>
+	    <img id = "dynamicImage" src = "" alt = "Image 1">
+    </div>
+    <div>
+        <!-- Display the precision score -->
+        <p>{{ trading_output|replace('$', '<br>$')|safe }}</p>
+    </div>
+    <script>
+	    document.getElementById('dynamicImage').src = "/static/" + "{{ ticker }}" + "_trading.png"
+    </script>
+</div>
+
 </body>
 </html>
 

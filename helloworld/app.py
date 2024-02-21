@@ -3,7 +3,7 @@ import logging
 from datetime import datetime, timedelta
 import yfinance as yf
 from ml import analyzeRF
-from clean import obtain_stock, MakeBaseImage 
+from clean import obtain_stock, MakeBaseImage,MakeTradingHistoryImage 
 import pandas as pd
 from simulations import simulate_trading
 
@@ -38,11 +38,12 @@ def analyze_handler(tickerSymbol):
     end_date = datetime.now()
     start_date = end_date - timedelta(days=10*365)
     df = yf.download(tickerSymbol, start=start_date.strftime('%Y-%m-%d'), end=end_date.strftime('%Y-%m-%d')) 
-    confusion_matrix, balance_str = analyzeRF(df,tickerSymbol)
+    confusion_matrix, output = analyzeRF(df,tickerSymbol)
     cm_df = pd.DataFrame(confusion_matrix, columns=['Predicted Decrease', 'Predicted Increase'], index=['Actual Decrease', 'Actual Increase'])
     # Convert the DataFrame to HTML
     cm_html = cm_df.to_html(classes='table table-striped', index=True, border=0)
-    return render_template('analysis.html', cm_table=cm_html, balance=balance_str, ticker=tickerSymbol)
+    MakeTradingHistoryImage(tickerSymbol)
+    return render_template('analysis.html', cm_table=cm_html, trading_output=output, ticker=tickerSymbol)
 
 def exists(tickerSymbol):
     end_date = datetime.now()

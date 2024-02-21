@@ -480,3 +480,33 @@ Traceback (most recent call last):
   File "/home/ubuntu/helloworld/app.py", line 45, in analyze_handler
     balance, buy_sell_log = simulate_trading(df, predictions)
 NameError: name 'predictions' is not defined
+Exception on /stock/favicon.ico/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/helloworld/venv/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 30, in obtain_stock_handler
+    return ("No ticker exists: ", tickerSymbol)
+NameError: name 'tickerSymbol' is not defined
+Exception on /analyze/MA/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 41, in analyze_handler
+    confusion_matrix, output = analyzeRF(df,tickerSymbol)
+  File "/home/ubuntu/helloworld/ml.py", line 22, in analyzeRF
+    balance, transactions = simulate_trading(df, predictions,tickerSymbol)
+  File "/home/ubuntu/helloworld/simulations.py", line 49, in simulate_trading
+    file_path = "simulations/"+ tickerSymbol_+"simulation.txt"
+NameError: name 'tickerSymbol_' is not defined
