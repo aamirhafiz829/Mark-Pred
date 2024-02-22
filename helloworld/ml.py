@@ -10,44 +10,57 @@ def analyzeRF(df,tickerSymbol):
     df["Tomorrow"] = df["Close"].shift(-1)
     df["Target"] = (df["Tomorrow"] > df["Close"]).astype(int)
     model = RandomForestClassifier(n_estimators=100, min_samples_split=100, random_state=1)
+    horizons = [5,60,250]
+    new_predictors = ["Volume"]
+    for horizon in horizons:
+        rolling_averages = df.rolling(horizon).mean()
+        ratio_column = f"Close_Ratio_{horizon}"
+        df[ratio_column] = df["Close"] / rolling_averages["Close"]
+        trend_column = f"Trend_{horizon}"
+        df[trend_column] = df.shift(1).rolling(horizon).sum()["Target"]
+        
+        rolling_averages = df.rolling(horizon).mean()
+        vol_ratio_column = f"Volume_Ratio_{horizon}"
+        df[vol_ratio_column] = df["Volume"] / rolling_averages["Volume"]
+        #vol_trend_column = f"Volume_Trend_{horizon}"
+        #df[vol_trend_column] = df.shift(1).rolling(horizon).sum()["Target"]
+        
+        new_predictors+= [ratio_column, trend_column, vol_ratio_column]
+    df = df.dropna(subset=df.columns[df.columns != "Tomorrow"])
+    
     train = df.iloc[:-100]
     test = df.iloc[-100:]
-    
-    predictors = ["Close", "Volume", "Open", "High", "Low"]
-    predictions = backtest(df, model, predictors)
+    print("train",train.head())
+    print("test",test.head())
+    predictions = backtest(df, model, new_predictors)
+    multiPredictions = multiPredictBacktest(df,model,new_predictors)
     differences = predictions["Predictions"] - predictions["Target"]
     correct = (differences == 0).sum()
     fails = (differences != 0).sum()
     results_table = {"correct": correct, "fails": fails}
     balance, transactions = simulate_trading(df, predictions,tickerSymbol)
+    
     output = "Balances per share: \n"
     for i in range(len(balance)):
         output += "$ "+str(round(balance[i], 3)) + " with " + str(transactions[i]) + " transactions\n"
-
-
     return (confusion_matrix(predictions["Target"], predictions["Predictions"]), output)
-
-
-def analyzeRFLegacy(df):
-    
-    df.index = pd.to_datetime(df.index)
-    df["Tomorrow"] = df["Close"].shift(-1)
-    df["Target"] = (df["Tomorrow"] > df["Close"]).astype(int)
-    model = RandomForestClassifier(n_estimators=100, min_samples_split=100, random_state=1)
-    train = df.iloc[:-100]
-    test = df.iloc[-100:]
-    print("train", train.head())
-    print("test",test.head())
-    predictors = ["Close", "Volume", "Open", "High", "Low"]
-    #model.fit(train[predictors], train["Target"])
-    #preds = model.predict(test[predictors])
-    #preds = pd.Series(presudo systemctl restart helloworldds, index=test.index)
-    predictions = backtest(df, model, predictors)
-    return (predictions["Predictions"].value_counts(),precision_score(predictions["Target"],predictions["Predictions"]))
     
 def predictRF(train, test, predictors, model):
     model.fit(train[predictors], train["Target"])
-    preds = model.predict(test[predictors])
+    preds = model.predict_proba(test[predictors])[:,1]
+    preds[preds >= 0.55] = 1
+    preds[preds<0.55]=0
+    preds = pd.Series(preds, index=test.index, name="Predictions")
+    combined = pd.concat([test["Target"], preds], axis=1)
+    return combined
+
+def multiPredictRF(train, test, predictors, model):
+    model.fit(train[predictors], train["Target"])
+    preds = model.predict_proba(test[predictors])[:,1]
+    preds[preds >= 0.6] = 1
+    preds[preds<0.4]= -1
+    preds[(preds < 0.6) & (preds>=0.4)]= 0
+
     preds = pd.Series(preds, index=test.index, name="Predictions")
     combined = pd.concat([test["Target"], preds], axis=1)
     return combined
@@ -63,6 +76,16 @@ def backtest(data, model, predictors, start=1000, step=100):
 
     return pd.concat(all_predictions)
 
+def multiPredictBacktest(data, model, predictors, start=1000, step=100):
+    all_predictions = []
+
+    for i in range(start, data.shape[0], step):
+        train = data.iloc[0:i].copy()
+        test = data.iloc[i:(i+step)].copy()
+        predictions = multiPredictRF(train, test, predictors, model)
+        all_predictions.append(predictions)
+
+    return pd.concat(all_predictions)
 
 #this is a legacy function
 def stock(tickerSymbol):

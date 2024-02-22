@@ -43,29 +43,90 @@
 <body>
     <h1>Stock Ticker</h1>
     <!-- Dropdown for selecting the ticker -->
-    <select id="tickerSelect">
-        <option value="AAPL">Apple</option>
-        <option value="TSLA">Tesla</option>
-    	<option value="NVDA">Nvidia Corp</option>
-	<option value="LLY">Lilly</option>
-	<option value="TSM">Taiwan Semiconductor</option>
-	<option value="V">Visa</option>
-	<option value="XOM">Exxom</option>
-	<option value="MA">Mastercard</option>
-	<option value="HD">Home Depot</option>
-	<option value="ORCL">Oracle</option>
-	<option value="JNJ">Johnson &amp; Johnson </option>
-	<option value="PG">Proctor &amp; Gamble Co.</option>
-    </select>
+    <!-- Technology Sector -->
+	<label for="techSectorSelect" style="font-size: 20px;">Technology Sector</label><br>
+	<select id="techSectorSelect">
+    <option value="" selected>Select an option</option>
+	<option value="AAPL">Apple</option>
+    <option value="AMD">Advanced Micro Devices</option>
+    <option value="JNJ">Johnson & Johnson</option>
+    <option value="SPWR">SunPower Corporation</option>
+    <option value="TSLA">Tesla</option>
+    <option value="NVDA">Nvidia Corp</option>
+    <option value="ORCL">Oracle</option>
+    <option value="TSM">Taiwan Semiconductor</option>
+</select><br>
 
+<!-- Healthcare Sector -->
+<label for="healthcareSectorSelect"style="font-size: 20px;">Healthcare Sector</label><br>
+<select id="healthcareSectorSelect">
+	<option value="" selected>Select an option</option>
+    <option value="LLY">Lilly</option>
+    <option value="JNJ">Johnson & Johnson</option>
+    <option value="GSK">GlaxoSmithKline</option>
+</select><br>
+
+<!-- Financial Services Sector -->
+<label for="financialServicesSectorSelect"style="font-size: 20px;">Financial Services Sector</label><br>
+<select id="financialServicesSectorSelect">
+	<option value="" selected>Select an option</option>
+    <option value="V">Visa</option>
+    <option value="MA">Mastercard</option>
+</select><br>
+
+<!-- Energy Sector -->
+<label for="energySectorSelect"style="font-size: 20px;">Energy Sector</label><br>
+<select id="energySectorSelect">
+	<option value="" selected>Select an option</option>
+    <option value="XOM">Exxon Mobil</option>
+    <option value="CVX">Chevron Corporation</option>
+</select><br>
+
+<!-- Consumer Discretionary Sector -->
+<label for="consumerDiscretionarySectorSelect"style="font-size: 20px;">Consumer Discretionary Sector</label><br>
+<select id="consumerDiscretionarySectorSelect">
+	<option value="" selected>Select an option</option>
+    <option value="HD">Home Depot</option>
+    <option value="NKE">Nike</option>
+    <option value="EL">Estee Lauder</option>
+    <option value="W">Wayfair</option>
+    <option value="BABA">Alibaba Group</option>
+    <option value="PTON">Peleton Interactive</option>
+</select><br>
+
+<!-- Consumer Staples Sector -->
+<label for="consumerStaplesSectorSelect"style="font-size: 20px;">Consumer Staples Sector</label><br>
+<select id="consumerStaplesSectorSelect">
+	<option value="" selected>Select an option</option>
+    <option value="PG">Procter & Gamble Co.</option>
+</select><br>
     <!-- Button to submit the selection -->
     <button onclick="goToStock()">Go to Stock</button>
 
     <script>
-        function goToStock() {
-            var selectedTicker = document.getElementById('tickerSelect').value;
-            window.location.href = '/stock/' + selectedTicker + '/';
+    function goToStock() {
+        var dropdownIds = [
+            'techSectorSelect', 
+            'healthcareSectorSelect', 
+            'financialServicesSectorSelect', 
+            'energySectorSelect', 
+            'consumerDiscretionarySectorSelect', 
+            'consumerStaplesSectorSelect'
+        ];
+        
+        for (var i = 0; i < dropdownIds.length; i++) {
+            var selectedTicker = document.getElementById(dropdownIds[i]).value;
+            if (selectedTicker) { // If a selection is made (non-empty value)
+                window.location.href = '/stock/' + selectedTicker + '/';
+                return; // Stop the function after navigating
+            }
         }
-    </script>
-</body>
+        
+        // Optional: handle the case where no selection was made in any dropdown
+        console.log('No stock selected');
+        // You can redirect to a default page or display a message, etc.
+    }
+</script>
+
+   </body>
 </html>

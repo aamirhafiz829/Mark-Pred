@@ -581,3 +581,233 @@ vim ml.py
 cat ml.py
 clear
 cat app.py
+ls
+cd helloworld/
+ls
+vim ml.py 
+vim app.py 
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+vim app.py
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+vim app.py
+cd templates/
+vim analysis.html 
+cd ..
+vim app.py
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+git add .
+git status
+git add ../.bash_history 
+git add ../.cache/py-yfinance/cookies.db
+git add ../.cache/py-yfinance/tkr-tz.db
+git add ../.viminfo
+git status
+git commit -m "tmir commit"
+git push
+clear
+ls
+cd helloworld/
+ls
+vim app.py
+clear
+ls
+cd helloworld
+ls
+vim simulations.py
+vim ml.py
+vim app.py
+cd templates/
+ls
+vim analysis.html 
+vim app.py
+cd ..
+vim app.py
+cd templates/
+vim analysis.html 
+cd ..
+vim app.py
+cd templates/
+vim app.py
+vim analysis.html 
+cd ..
+ls
+cd templates/
+cd ..
+vim terminal_output.log 
+vim app.py 
+vim ml.py 
+vim app.py 
+vim ml.py 
+vim simulations.py 
+vim ml.py 
+vim app.py 
+cd templates/
+vim analysis.html 
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+vim analysis.html 
+cd ..
+vim 
+vim app.py 
+vim simulations.py 
+vim ml.py 
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+cd templates/
+vim analysis.html 
+cd ..
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+cd ..
+cd helloworld/
+cd templates/
+vim analysis.html 
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+cd ..
+vim simulations.py
+vim simulations
+ls
+vim simulations.py
+cd simulations/
+ls
+cd ..
+vim simulations.py
+vim ml.py
+cd simulations
+ls
+vim MA_simulation.txt 
+cd ..
+vim ml.py 
+cd simulations
+vim MA_simulation.txt 
+cd ..
+vim clean.py 
+vim JNJ_simulation.txt 
+cd simulations/
+ls
+vim NVDA_simulation.txt 
+cd ..
+ls
+vim clean.py 
+vim app.py
+cd templates/
+vim analysis.html 
+vim ticker_dashboard.html 
+cd ..
+ls
+vim clean.py 
+rm simulationAAPL.txt 
+rm simulationHD.txt 
+rm simulationORCL.txt 
+rm simulationV.txt 
+ls
+cd simulations/
+ls
+cd ..
+vim simulations.py 
+vim clean.py 
+ls
+vim clean.py 
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+vim terminal_output.log 
+ls
+cd helloworld/
+sudo systemctl daemon-reload
+sudo systemctl restart helloworld
+udo service nginx restart
+sudo service nginx restart
+sudo service gunicorn3
+sudo service gunicorn
+sudo systemctl restart helloworld
+sudo systemctl enable nginx
+sudo systemctl enable gunicorn3
+gunicorn -b 0.0.0.0:8000 app:app
+pip install yfinance
+gunicorn -b 0.0.0.0:8000 app:app
+pip install sklearn
+pip install scikit-learn
+gunicorn -b 0.0.0.0:8000 app:app
+vim clean.py 
+gunicorn -b 0.0.0.0:8000 app:app
+pip install matplotlib
+gunicorn -b 0.0.0.0:8000 app:app
+vim simulations.py 
+gunicorn -b 0.0.0.0:8000 app:app
+clear
+ls
+cd static
+ls
+cd ..
+cd plots/
+ls
+cd ..
+vim simulations.py 
+vim clean.py 
+cd templates/
+ls
+vim ticker_dashboard.html 
+vim analysis.html 
+cd ..
+cd static/
+ls
+cd ../plots/
+ls
+cd ..
+vim clean.py 
+cd templates/
+vim analysis.html 
+gunicorn -b 0.0.0.0:8000 app:app
+cd..
+cd ..
+gunicorn -b 0.0.0.0:8000 app:app
+clear
+cd templates/
+cd ../plots/
+ls
+cd ../static/
+ls
+cd ../templates/
+vim analysis.html 
+cd ..
+gunicorn -b 0.0.0.0:8000 app:app
+clear
+cd templates/
+vim analysis.html 
+gunicorn -b 0.0.0.0:8000 app:app
+cd..
+cd ..
+gunicorn -b 0.0.0.0:8000 app:app
+cd static/
+ls
+cd ..
+vim te
+cd templates/
+vim ticker_dashboard.html 
+vim analysis.html 
+gunicorn -b 0.0.0.0:8000 app:app
+cd ..
+gunicorn -b 0.0.0.0:8000 app:app
+clear
+vim analysis.html 
+cd templates/
+vim analysis.html 
+gunicorn -b 0.0.0.0:8000 app:app
+cd ..
+gunicorn -b 0.0.0.0:8000 app:app
+cler
+clear
+ls
+cd hello
+cd helloworld/
+ls
+git add a.
+git add .
+git commit -m "Front end changes, plot showing buy and sell"
+git push origin master

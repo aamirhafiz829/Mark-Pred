@@ -20,7 +20,7 @@ if not app.debug:
 
 @app.route('/name/<name>/',methods=["GET"])
 def show_name(name):
-    return name + '!'
+    return name + '?'
 
 @app.route('/stock/<ticker>/',methods = ["GET"])
 def obtain_stock_handler(ticker):
@@ -52,7 +52,7 @@ def exists(tickerSymbol):
     data = yf.download(tickerSymbol, start=start_date.strftime('%Y-%m-%d'), end=end_date.strftime('%Y-%m-%d'))
     if data.empty:
         return False
-    print(data.head())
+    #print(data.head())
     return True
 
 if __name__ == "__main__":

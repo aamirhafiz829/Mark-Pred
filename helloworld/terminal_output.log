@@ -510,3 +510,61 @@ Traceback (most recent call last):
   File "/home/ubuntu/helloworld/simulations.py", line 49, in simulate_trading
     file_path = "simulations/"+ tickerSymbol_+"simulation.txt"
 NameError: name 'tickerSymbol_' is not defined
+Exception on /analyze/TSM/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 41, in analyze_handler
+    confusion_matrix, output = analyzeRF(df,tickerSymbol)
+  File "/home/ubuntu/helloworld/ml.py", line 36, in analyzeRF
+    multiPredictions = multiPredictBacktest(df,model,new_predictors)
+  File "/home/ubuntu/helloworld/ml.py", line 85, in multiPredictBacktest
+    predictions = multiPredictRF(train, test, predictors, model)
+  File "/home/ubuntu/helloworld/ml.py", line 62, in multiPredictRF
+    preds[preds < 0.6 & preds>=0.4]= 0
+TypeError: ufunc 'bitwise_and' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+Exception on /stock/WE/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 30, in obtain_stock_handler
+    return ("No ticker exists: ", tickerSymbol)
+NameError: name 'tickerSymbol' is not defined
+Exception on /stock/FTCH/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 30, in obtain_stock_handler
+    return ("No ticker exists: ", tickerSymbol)
+NameError: name 'tickerSymbol' is not defined
+Exception on /stock/ABCM/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 30, in obtain_stock_handler
+    return ("No ticker exists: ", tickerSymbol)
+NameError: name 'tickerSymbol' is not defined
