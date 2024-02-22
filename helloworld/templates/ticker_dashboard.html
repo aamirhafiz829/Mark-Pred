@@ -16,6 +16,7 @@
     <img id="dynamicImage" src="" alt="Image 1">
     </div>
     <!-- Button to call /base/<ticker>/ -->
+    <button onclick="goHome()">Home</button>
     <button onclick="goToBase()">Go to Base</button>
     <button onclick="analyzeTicker()">Analyze</button>
     <script>
@@ -30,7 +31,10 @@
         // Set the image source based on the ticker
         document.getElementById('dynamicImage').src = "/static/" + ticker + "_base.png";
         // Function to redirect to /base/<ticker>/
-        function goToBase() {
+	function goHome() {
+	    window.location.href = '/'
+	}
+	function goToBase() {
             window.location.href = '/base/' + ticker + '/';
         }
 	function analyzeTicker() {

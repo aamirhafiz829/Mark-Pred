@@ -26,8 +26,13 @@
         <!-- Display the precision score -->
         <p>{{ trading_output|replace('$', '<br>$')|safe }}</p>
     </div>
+    <br><button onclick="goHome()">Home</button>
+
     <script>
 	    document.getElementById('dynamicImage').src = "/static/" + "{{ ticker }}" + "_trading.png"
+    	function goHome() {
+            window.location.href = '/'
+        }
     </script>
 </div>
 
