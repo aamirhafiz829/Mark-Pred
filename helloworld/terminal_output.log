@@ -568,3 +568,75 @@ Traceback (most recent call last):
   File "/home/ubuntu/helloworld/app.py", line 30, in obtain_stock_handler
     return ("No ticker exists: ", tickerSymbol)
 NameError: name 'tickerSymbol' is not defined
+Exception on /analyze/PTON/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 41, in analyze_handler
+    confusion_matrix, output = analyzeRF(df,tickerSymbol)
+  File "/home/ubuntu/helloworld/ml.py", line 35, in analyzeRF
+    predictions = backtest(df, model, new_predictors)
+  File "/home/ubuntu/helloworld/ml.py", line 77, in backtest
+    return pd.concat(all_predictions)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 380, in concat
+    op = _Concatenator(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 443, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 505, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+Exception on /analyze/ORCL/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 41, in analyze_handler
+    confusion_matrix, output = analyzeRF(df,tickerSymbol)
+  File "/home/ubuntu/helloworld/ml.py", line 11, in analyzeRF
+    return trainRF(df,tickerSymbol)
+  File "/home/ubuntu/helloworld/ml.py", line 43, in trainRF
+    predictions = backtest(df, model, new_predictors)
+NameError: name 'model' is not defined
+Exception on /analyze/GSK/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 41, in analyze_handler
+    confusion_matrix, output = analyzeRF(df,tickerSymbol)
+  File "/home/ubuntu/helloworld/ml.py", line 11, in analyzeRF
+    return trainRF(df,tickerSymbol)
+  File "/home/ubuntu/helloworld/ml.py", line 44, in trainRF
+    predictions = backtest(df, model, new_predictors)
+NameError: name 'new_predictors' is not defined
+Exception on /analyze/TSLA/ [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/helloworld/app.py", line 41, in analyze_handler
+    confusion_matrix, output = analyzeRF(df,tickerSymbol)
+  File "/home/ubuntu/helloworld/ml.py", line 10, in analyzeRF
+    df,new_predictors = preprocessing(df, tickerSymbol)
+ValueError: too many values to unpack (expected 2)
